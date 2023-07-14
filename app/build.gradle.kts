@@ -55,6 +55,9 @@ dependencies {
     // for using some java 8 classes like LocalDate with older versions of android
     coreLibraryDesugaring(libs.core.java8)
 
+    // Appyx
+    implementation(libs.appyx)
+
     implementation(libs.core)
     implementation(libs.core.appcompat)
 
