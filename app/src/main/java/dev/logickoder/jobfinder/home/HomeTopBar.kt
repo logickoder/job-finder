@@ -54,7 +54,12 @@ fun HomeTopBar(modifier: Modifier = Modifier) {
                                 color = MaterialTheme.colorScheme.primaryContainer,
                                 shape = CircleShape,
                             )
-                            .padding(5.dp)
+                            .padding(3.dp)
+                            .background(
+                                color = MaterialTheme.colorScheme.background,
+                                shape = CircleShape,
+                            )
+                            .padding(3.dp)
                             .size(35.dp)
                             .clip(CircleShape),
                         model = "https://www.gravatar.com/avatar/6d94860616dbab71d6d2d2485c698bb3?s=400",
