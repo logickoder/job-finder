@@ -22,8 +22,8 @@ private val LightColorScheme = lightColorScheme(
     primary = PrimaryColor,
     primaryContainer = PrimaryContainer,
     onPrimaryContainer = Color.Black.copy(alpha = 0.3f),
-    onSurface = TitleTextColor,
-    onBackground = TitleTextColor,
+    onSurface = TextColor,
+    onSurfaceVariant = TitleTextColor,
 )
 
 @Composable
@@ -55,7 +55,7 @@ fun JobFinderTheme(
         typography = Typography,
         content = {
             CompositionLocalProvider(
-                LocalContentColor provides TextColor,
+                LocalContentColor provides MaterialTheme.colorScheme.onSurface,
                 content = content,
             )
         }

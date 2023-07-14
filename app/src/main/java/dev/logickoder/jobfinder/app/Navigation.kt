@@ -37,7 +37,6 @@ class Navigation(
         return when (navTarget) {
             Route.Home -> HomeRoute(
                 buildContext = buildContext,
-                backStack = backStack,
             )
         }
     }
