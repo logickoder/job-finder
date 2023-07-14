@@ -58,6 +58,9 @@ dependencies {
     // Appyx
     implementation(libs.appyx)
 
+    // Coil
+    implementation(libs.coil)
+
     implementation(libs.core)
     implementation(libs.core.appcompat)
 
