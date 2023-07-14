@@ -5,11 +5,11 @@ import androidx.activity.compose.setContent
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import com.bumble.appyx.core.integration.NodeHost
-import com.bumble.appyx.core.integrationpoint.NodeActivity
+import com.bumble.appyx.core.integrationpoint.NodeComponentActivity
 import dev.logickoder.jobfinder.app.Navigation
 import dev.logickoder.jobfinder.app.theme.JobFinderTheme
 
-class MainActivity : NodeActivity() {
+class MainActivity : NodeComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {

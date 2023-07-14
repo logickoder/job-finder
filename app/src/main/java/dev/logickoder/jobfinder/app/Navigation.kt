@@ -9,6 +9,8 @@ import com.bumble.appyx.core.node.Node
 import com.bumble.appyx.core.node.ParentNode
 import com.bumble.appyx.navmodel.backstack.BackStack
 import com.bumble.appyx.navmodel.backstack.transitionhandler.rememberBackstackSlider
+import dev.logickoder.jobfinder.home.HomeRoute
+import kotlinx.parcelize.Parcelize
 
 class Navigation(
     buildContext: BuildContext,
@@ -33,11 +35,16 @@ class Navigation(
 
     override fun resolve(navTarget: Route, buildContext: BuildContext): Node {
         return when (navTarget) {
-
+            Route.Home -> HomeRoute(
+                buildContext = buildContext,
+                backStack = backStack,
+            )
         }
     }
 
     sealed interface Route : Parcelable {
 
+        @Parcelize
+        object Home : Route
     }
 }
