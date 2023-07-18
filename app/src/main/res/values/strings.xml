@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">Job Finder</string>
+
+    <plurals name="job_posted_date">
+        <item quantity="one">%d day ago</item>
+        <item quantity="other">%d days ago</item>
+    </plurals>
 </resources>
