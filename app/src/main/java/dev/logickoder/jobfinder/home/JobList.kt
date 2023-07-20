@@ -107,12 +107,16 @@ private fun JobItem(
                     Row(
                         horizontalArrangement = Arrangement.spacedBy(4.dp),
                         content = {
+                            val days = ChronoUnit.DAYS.between(
+                                job.datePosted,
+                                LocalDate.now()
+                            ).toInt()
                             JobInfoItem(
                                 icon = Icons.Outlined.Timelapse,
                                 text = pluralStringResource(
                                     id = R.plurals.job_posted_date,
-                                    count = ChronoUnit.DAYS.between(LocalDate.now(), job.datePosted)
-                                        .toInt(),
+                                    count = days,
+                                    days
                                 ),
                             )
                             JobInfoItem(
