@@ -9,7 +9,6 @@ import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
-import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableIntStateOf
@@ -75,16 +74,11 @@ fun HomeScreen(
                                 fontSize = 20.sp,
                             )
                             Spacer(modifier = Modifier.weight(1f))
-                            TextButton(
-                                onClick = {},
-                                content = {
-                                    Text(
-                                        text = stringResource(R.string.view_all),
-                                        style = MaterialTheme.typography.bodyMedium,
-                                        color = MaterialTheme.colorScheme.primary,
-                                        fontWeight = FontWeight.W500,
-                                    )
-                                }
+                            Text(
+                                text = stringResource(R.string.view_all),
+                                style = MaterialTheme.typography.bodyMedium,
+                                color = MaterialTheme.colorScheme.primary,
+                                fontWeight = FontWeight.W500,
                             )
                         }
                     )
