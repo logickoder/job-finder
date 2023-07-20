@@ -17,9 +17,11 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.sp
+import dev.logickoder.jobfinder.R
 import dev.logickoder.jobfinder.app.model.TestJobs
 import dev.logickoder.jobfinder.app.theme.JobFinderTheme
 import dev.logickoder.jobfinder.app.theme.padding
@@ -47,7 +49,7 @@ fun HomeScreen(
                             horizontal = padding(),
                             vertical = paddingSmall(),
                         ),
-                        text = "Your skill is required for many jobs",
+                        text = stringResource(R.string.home_heading),
                         style = MaterialTheme.typography.headlineMedium,
                         fontWeight = FontWeight.W600,
                     )
@@ -63,7 +65,7 @@ fun HomeScreen(
                         verticalAlignment = Alignment.CenterVertically,
                         content = {
                             Text(
-                                text = "Based on your skills",
+                                text = stringResource(R.string.based_on_your_skills),
                                 style = MaterialTheme.typography.titleLarge,
                                 color = MaterialTheme.colorScheme.onSurfaceVariant,
                                 fontWeight = FontWeight.W600,
@@ -74,7 +76,7 @@ fun HomeScreen(
                                 onClick = {},
                                 content = {
                                     Text(
-                                        text = "View all",
+                                        text = stringResource(R.string.view_all),
                                         style = MaterialTheme.typography.bodyMedium,
                                         color = MaterialTheme.colorScheme.primary,
                                         fontWeight = FontWeight.W500,

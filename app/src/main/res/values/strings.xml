@@ -1,6 +1,13 @@
 <resources>
     <string name="app_name">Job Finder</string>
 
+    <!-- Home -->
+    <string name="home_heading">Your skill is required for many jobs</string>
+    <string name="home_job_search_title">Search any job…</string>
+    <string name="based_on_your_skills">Based on your skills</string>
+    <string name="view_all">View all</string>
+    <string name="apply_now">Apply now</string>
+
     <plurals name="job_posted_date">
         <item quantity="one">%d day ago</item>
         <item quantity="other">%d days ago</item>

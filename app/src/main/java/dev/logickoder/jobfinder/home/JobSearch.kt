@@ -15,6 +15,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.layout.Layout
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import dev.logickoder.jobfinder.R
@@ -45,7 +46,7 @@ fun JobSearch(
                                 contentDescription = null,
                             )
                             Text(
-                                text = "Search any job...",
+                                text = stringResource(id = R.string.home_job_search_title),
                                 style = MaterialTheme.typography.bodyLarge,
                                 fontWeight = FontWeight.W600,
                                 color = MaterialTheme.colorScheme.onPrimary,
