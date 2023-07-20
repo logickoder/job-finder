@@ -94,16 +94,14 @@ private fun JobItem(
                     Text(
                         modifier = Modifier.padding(top = paddingSmall()),
                         text = job.title,
-                        style = MaterialTheme.typography.bodyLarge.copy(
-                            fontWeight = FontWeight.W500,
-                        ),
+                        style = MaterialTheme.typography.bodyLarge,
                         color = MaterialTheme.colorScheme.onSurfaceVariant,
+                        fontWeight = FontWeight.W500,
                     )
                     Text(
                         text = job.location,
-                        style = MaterialTheme.typography.bodyMedium.copy(
-                            fontWeight = FontWeight.W500,
-                        ),
+                        style = MaterialTheme.typography.bodyMedium,
+                        fontWeight = FontWeight.W500,
                         color = MaterialTheme.colorScheme.onSurface,
                     )
                     Row(
@@ -134,9 +132,8 @@ private fun JobItem(
                                 content = {
                                     Text(
                                         text = "Apply now",
-                                        style = MaterialTheme.typography.bodySmall.copy(
-                                            fontWeight = FontWeight.W700,
-                                        )
+                                        style = MaterialTheme.typography.bodySmall,
+                                        fontWeight = FontWeight.W700,
                                     )
                                 }
                             )

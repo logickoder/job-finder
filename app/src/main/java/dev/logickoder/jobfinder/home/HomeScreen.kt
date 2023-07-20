@@ -48,9 +48,8 @@ fun HomeScreen(
                             vertical = paddingSmall(),
                         ),
                         text = "Your skill is required for many jobs",
-                        style = MaterialTheme.typography.headlineMedium.copy(
-                            fontWeight = FontWeight.W600,
-                        ),
+                        style = MaterialTheme.typography.headlineMedium,
+                        fontWeight = FontWeight.W600,
                     )
                     JobSearch(
                         modifier = Modifier.padding(
@@ -65,11 +64,10 @@ fun HomeScreen(
                         content = {
                             Text(
                                 text = "Based on your skills",
-                                style = MaterialTheme.typography.titleLarge.copy(
-                                    color = MaterialTheme.colorScheme.onSurfaceVariant,
-                                    fontWeight = FontWeight.W600,
-                                    fontSize = 20.sp,
-                                ),
+                                style = MaterialTheme.typography.titleLarge,
+                                color = MaterialTheme.colorScheme.onSurfaceVariant,
+                                fontWeight = FontWeight.W600,
+                                fontSize = 20.sp,
                             )
                             Spacer(modifier = Modifier.weight(1f))
                             TextButton(
@@ -77,10 +75,9 @@ fun HomeScreen(
                                 content = {
                                     Text(
                                         text = "View all",
-                                        style = MaterialTheme.typography.bodyMedium.copy(
-                                            color = MaterialTheme.colorScheme.primary,
-                                            fontWeight = FontWeight.W500,
-                                        ),
+                                        style = MaterialTheme.typography.bodyMedium,
+                                        color = MaterialTheme.colorScheme.primary,
+                                        fontWeight = FontWeight.W500,
                                     )
                                 }
                             )

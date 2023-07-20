@@ -33,9 +33,8 @@ fun Rating(
             Text(
                 modifier = modifier,
                 text = String.format("%.1f", rating),
-                style = MaterialTheme.typography.bodyLarge.copy(
-                    fontWeight = FontWeight.W500,
-                ),
+                style = MaterialTheme.typography.bodyLarge,
+                fontWeight = FontWeight.W500,
                 color = textColor,
             )
         }

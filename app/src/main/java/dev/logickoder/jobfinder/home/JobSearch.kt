@@ -46,9 +46,8 @@ fun JobSearch(
                             )
                             Text(
                                 text = "Search any job...",
-                                style = MaterialTheme.typography.bodyLarge.copy(
-                                    fontWeight = FontWeight.W600,
-                                ),
+                                style = MaterialTheme.typography.bodyLarge,
+                                fontWeight = FontWeight.W600,
                                 color = MaterialTheme.colorScheme.onPrimary,
                             )
                         }
