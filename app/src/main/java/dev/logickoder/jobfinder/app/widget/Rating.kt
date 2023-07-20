@@ -14,6 +14,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import dev.logickoder.jobfinder.app.theme.JobFinderTheme
+import dev.logickoder.jobfinder.app.theme.RatingColor
 
 @Composable
 fun Rating(
@@ -28,7 +29,7 @@ fun Rating(
             Icon(
                 imageVector = Icons.Filled.Star,
                 contentDescription = null,
-                tint = Color(0xFFF8D048),
+                tint = RatingColor,
             )
             Text(
                 modifier = modifier,
