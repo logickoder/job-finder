@@ -10,6 +10,7 @@ import com.bumble.appyx.core.node.ParentNode
 import com.bumble.appyx.navmodel.backstack.BackStack
 import com.bumble.appyx.navmodel.backstack.transitionhandler.rememberBackstackSlider
 import dev.logickoder.jobfinder.home.HomeRoute
+import dev.logickoder.jobfinder.jobdescription.JobDescriptionRoute
 import kotlinx.parcelize.Parcelize
 
 class Navigation(
@@ -38,6 +39,10 @@ class Navigation(
             Route.Home -> HomeRoute(
                 buildContext = buildContext,
             )
+
+            Route.JobDescription -> JobDescriptionRoute(
+                buildContext = buildContext,
+            )
         }
     }
 
@@ -45,5 +50,8 @@ class Navigation(
 
         @Parcelize
         object Home : Route
+
+        @Parcelize
+        object JobDescription : Route
     }
 }
