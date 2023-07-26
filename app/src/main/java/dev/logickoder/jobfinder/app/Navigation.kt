@@ -8,6 +8,7 @@ import com.bumble.appyx.core.modality.BuildContext
 import com.bumble.appyx.core.node.Node
 import com.bumble.appyx.core.node.ParentNode
 import com.bumble.appyx.navmodel.backstack.BackStack
+import com.bumble.appyx.navmodel.backstack.operation.push
 import com.bumble.appyx.navmodel.backstack.transitionhandler.rememberBackstackSlider
 import dev.logickoder.jobfinder.home.HomeRoute
 import dev.logickoder.jobfinder.jobdescription.JobDescriptionRoute
@@ -38,6 +39,9 @@ class Navigation(
         return when (navTarget) {
             Route.Home -> HomeRoute(
                 buildContext = buildContext,
+                navigateToJobDescription = {
+                    backStack.push(Route.JobDescription(it))
+                }
             )
 
             is Route.JobDescription -> JobDescriptionRoute(

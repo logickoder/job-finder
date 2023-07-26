@@ -51,6 +51,7 @@ fun JobList(
         start = padding(),
         end = padding(),
     ),
+    onApplyToJobClicked: (String) -> Unit,
 ) {
     LazyRow(
         modifier = modifier,
@@ -61,7 +62,8 @@ fun JobList(
                     job = jobs[index],
                     modifier = Modifier.padding(
                         start = if (index != 0) paddingSmall() else 0.dp,
-                    )
+                    ),
+                    onApplyClicked = onApplyToJobClicked,
                 )
             }
         },
@@ -71,7 +73,8 @@ fun JobList(
 @Composable
 private fun JobItem(
     job: Job,
-    modifier: Modifier = Modifier
+    modifier: Modifier = Modifier,
+    onApplyClicked: (String) -> Unit,
 ) {
     Box(
         modifier = modifier
@@ -133,7 +136,9 @@ private fun JobItem(
                         content = {
                             Button(
                                 modifier = Modifier.weight(1f),
-                                onClick = {},
+                                onClick = {
+                                    onApplyClicked(job.id)
+                                },
                                 content = {
                                     Text(
                                         text = stringResource(R.string.apply_now),
@@ -189,12 +194,12 @@ private fun JobInfoItem(
 @Preview(showBackground = true)
 @Composable
 private fun JobItemPreview() = JobFinderTheme {
-    JobItem(job = TestJobs[0])
+    JobItem(job = TestJobs[0]) {}
 }
 
 @Preview(showBackground = true)
 @Composable
 private fun JobListPreview() = JobFinderTheme {
-    JobList(jobs = TestJobs)
+    JobList(jobs = TestJobs) {}
 }
 

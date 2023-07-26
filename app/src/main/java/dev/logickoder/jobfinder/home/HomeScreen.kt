@@ -30,6 +30,7 @@ import dev.logickoder.jobfinder.app.theme.paddingSmall
 @Composable
 fun HomeScreen(
     modifier: Modifier = Modifier,
+    onApplyToJobClicked: (String) -> Unit,
 ) {
     var selectedIndex by remember { mutableIntStateOf(0) }
 
@@ -82,7 +83,10 @@ fun HomeScreen(
                             )
                         }
                     )
-                    JobList(jobs = TestJobs)
+                    JobList(
+                        jobs = TestJobs,
+                        onApplyToJobClicked = onApplyToJobClicked
+                    )
                 }
             )
         },
@@ -100,5 +104,5 @@ fun HomeScreen(
 @Preview(showBackground = true)
 @Composable
 private fun HomeScreenPreview() = JobFinderTheme {
-    HomeScreen()
+    HomeScreen {}
 }
