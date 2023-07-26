@@ -11,7 +11,7 @@ android {
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "dev.logickoder.jobfinder"
+        applicationId = namespace
         minSdk = 24
         targetSdk = 34
         versionCode = 1

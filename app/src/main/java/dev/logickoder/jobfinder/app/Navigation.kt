@@ -40,8 +40,9 @@ class Navigation(
                 buildContext = buildContext,
             )
 
-            Route.JobDescription -> JobDescriptionRoute(
+            is Route.JobDescription -> JobDescriptionRoute(
                 buildContext = buildContext,
+                jobId = navTarget.jobId,
             )
         }
     }
@@ -49,9 +50,9 @@ class Navigation(
     sealed interface Route : Parcelable {
 
         @Parcelize
-        object Home : Route
+        data object Home : Route
 
         @Parcelize
-        object JobDescription : Route
+        data class JobDescription(val jobId: String) : Route
     }
 }

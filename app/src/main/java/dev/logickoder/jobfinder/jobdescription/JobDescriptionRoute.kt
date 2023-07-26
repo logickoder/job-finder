@@ -8,6 +8,7 @@ import dev.logickoder.jobfinder.home.HomeScreen
 
 class JobDescriptionRoute(
     buildContext: BuildContext,
+    private val jobId: String,
 ) : Node(buildContext) {
 
     @Composable
