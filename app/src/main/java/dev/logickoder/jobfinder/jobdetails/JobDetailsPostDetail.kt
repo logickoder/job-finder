@@ -1,4 +1,4 @@
-package dev.logickoder.jobfinder.jobdescription
+package dev.logickoder.jobfinder.jobdetails
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
@@ -31,7 +31,7 @@ import dev.logickoder.jobfinder.app.widget.Rating
 import kotlin.math.roundToInt
 
 @Composable
-fun JobDescriptionPostDetail(
+fun JobDetailsPostDetail(
     job: Job,
     modifier: Modifier = Modifier,
 ) {
@@ -184,8 +184,8 @@ private fun DotDecoration(
 
 @Preview(showBackground = true)
 @Composable
-private fun JobDescriptionPostDetailPreview() = JobFinderTheme {
-    JobDescriptionPostDetail(
+private fun JobDetailsPostDetailPreview() = JobFinderTheme {
+    JobDetailsPostDetail(
         modifier = Modifier.fillMaxWidth(),
         job = TestJobs.first(),
     )

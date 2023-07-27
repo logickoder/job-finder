@@ -1,4 +1,4 @@
-package dev.logickoder.jobfinder.jobdescription
+package dev.logickoder.jobfinder.jobdetails
 
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
@@ -7,7 +7,7 @@ import com.bumble.appyx.core.modality.BuildContext
 import com.bumble.appyx.core.node.Node
 import dev.logickoder.jobfinder.app.model.TestJobs
 
-class JobDescriptionRoute(
+class JobDetailsRoute(
     buildContext: BuildContext,
     private val jobId: String,
 ) : Node(buildContext) {
@@ -18,7 +18,7 @@ class JobDescriptionRoute(
             TestJobs.first { it.id == jobId }
         }
 
-        JobDescriptionScreen(
+        JobDetailsScreen(
             job = job,
             modifier = modifier,
             onBack = ::navigateUp,

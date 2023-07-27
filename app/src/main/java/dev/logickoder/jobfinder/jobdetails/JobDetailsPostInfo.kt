@@ -1,4 +1,4 @@
-package dev.logickoder.jobfinder.jobdescription
+package dev.logickoder.jobfinder.jobdetails
 
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.padding
@@ -23,7 +23,7 @@ import dev.logickoder.jobfinder.app.model.daysSincePosted
 import dev.logickoder.jobfinder.app.theme.JobFinderTheme
 
 @Composable
-fun JobDescriptionPostInfo(
+fun JobDetailsPostInfo(
     job: Job,
     modifier: Modifier = Modifier,
 ) {
@@ -70,8 +70,8 @@ fun JobDescriptionPostInfo(
 
 @Preview(showBackground = true)
 @Composable
-private fun JobDescriptionPostInfoPreview() = JobFinderTheme {
-    JobDescriptionPostInfo(
+private fun JobDetailsPostInfoPreview() = JobFinderTheme {
+    JobDetailsPostInfo(
         job = TestJobs.first(),
     )
 }

@@ -1,4 +1,4 @@
-package dev.logickoder.jobfinder.jobdescription
+package dev.logickoder.jobfinder.jobdetails
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
@@ -30,7 +30,7 @@ import dev.logickoder.jobfinder.app.theme.paddingSecondary
 import dev.logickoder.jobfinder.app.widget.TopBar
 
 @Composable
-fun JobDescriptionScreen(
+fun JobDetailsScreen(
     job: Job,
     modifier: Modifier = Modifier,
     onBack: () -> Unit,
@@ -69,14 +69,14 @@ fun JobDescriptionScreen(
                                 color = MaterialTheme.colorScheme.onSurfaceVariant,
                                 fontWeight = FontWeight.W500,
                             )
-                            JobDescriptionPostInfo(job = job)
-                            JobDescriptionPostDetail(
+                            JobDetailsPostInfo(job = job)
+                            JobDetailsPostDetail(
                                 modifier = Modifier
                                     .fillMaxWidth()
                                     .padding(vertical = padding()),
                                 job = job
                             )
-                            JobDescriptionInfoToggle(modifier = Modifier.fillMaxWidth())
+                            JobDetailsInfoToggle(modifier = Modifier.fillMaxWidth())
                         }
                     )
 
@@ -101,8 +101,8 @@ fun JobDescriptionScreen(
 
 @Preview(showBackground = true)
 @Composable
-private fun JobDescriptionScreenPreview() = JobFinderTheme {
-    JobDescriptionScreen(
+private fun JobDetailsScreenPreview() = JobFinderTheme {
+    JobDetailsScreen(
         job = TestJobs[0],
         onBack = {},
     )

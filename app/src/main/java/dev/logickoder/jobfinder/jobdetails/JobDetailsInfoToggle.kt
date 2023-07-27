@@ -1,4 +1,4 @@
-package dev.logickoder.jobfinder.jobdescription
+package dev.logickoder.jobfinder.jobdetails
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
@@ -25,7 +25,7 @@ import dev.logickoder.jobfinder.app.theme.paddingSecondary
 import kotlinx.collections.immutable.persistentListOf
 
 @Composable
-fun JobDescriptionInfoToggle(
+fun JobDetailsInfoToggle(
     modifier: Modifier = Modifier,
 ) {
     var selected by remember { mutableIntStateOf(R.string.job_description) }
@@ -81,7 +81,7 @@ private fun ToggleItem(
 
 @Preview(showBackground = true)
 @Composable
-private fun JobDescriptionInfoTogglePreview() = JobFinderTheme {
-    JobDescriptionInfoToggle()
+private fun JobDetailsInfoTogglePreview() = JobFinderTheme {
+    JobDetailsInfoToggle()
 }
 
