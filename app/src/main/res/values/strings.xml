@@ -11,6 +11,7 @@
     <!-- Job Description -->
     <string name="job_description">Job Description</string>
     <string name="about_company">About Company</string>
+    <string name="about_job">About Job</string>
 
     <plurals name="job_posted_date">
         <item quantity="one">%d day ago</item>
