@@ -5,6 +5,8 @@ import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.outlined.BookmarkBorder
 import androidx.compose.material3.Button
@@ -24,6 +26,7 @@ import dev.logickoder.jobfinder.app.model.Job
 import dev.logickoder.jobfinder.app.model.TestJobs
 import dev.logickoder.jobfinder.app.theme.JobFinderTheme
 import dev.logickoder.jobfinder.app.theme.padding
+import dev.logickoder.jobfinder.app.theme.paddingSecondary
 import dev.logickoder.jobfinder.app.widget.TopBar
 
 @Composable
@@ -36,7 +39,7 @@ fun JobDescriptionScreen(
         modifier = modifier,
         topBar = {
             TopBar(
-                modifier = Modifier.padding(horizontal = padding() - 16.dp),
+                modifier = Modifier.padding(horizontal = padding() - paddingSecondary()),
                 title = job.company,
                 onBack = onBack,
                 trailingIcon = Icons.Outlined.BookmarkBorder,
@@ -49,7 +52,9 @@ fun JobDescriptionScreen(
                     .padding(scaffoldPadding),
                 content = {
                     Column(
-                        modifier = Modifier.fillMaxWidth(),
+                        modifier = Modifier
+                            .verticalScroll(rememberScrollState())
+                            .fillMaxWidth(),
                         horizontalAlignment = Alignment.CenterHorizontally,
                         content = {
                             AsyncImage(
@@ -71,6 +76,7 @@ fun JobDescriptionScreen(
                                     .padding(vertical = padding()),
                                 job = job
                             )
+                            JobDescriptionInfoToggle(modifier = Modifier.fillMaxWidth())
                         }
                     )
 

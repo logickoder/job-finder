@@ -26,10 +26,9 @@ import androidx.compose.ui.unit.dp
 import dev.logickoder.jobfinder.app.model.Job
 import dev.logickoder.jobfinder.app.model.TestJobs
 import dev.logickoder.jobfinder.app.theme.JobFinderTheme
+import dev.logickoder.jobfinder.app.theme.paddingSecondary
 import dev.logickoder.jobfinder.app.widget.Rating
 import kotlin.math.roundToInt
-
-private val DotSize = 16.dp
 
 @Composable
 fun JobDescriptionPostDetail(
@@ -39,6 +38,7 @@ fun JobDescriptionPostDetail(
     val salary = remember {
         "$${(job.salary / 1000).roundToInt()}k"
     }
+    val dotSize = paddingSecondary()
     Layout(
         modifier = modifier,
         content = {
@@ -83,7 +83,7 @@ fun JobDescriptionPostDetail(
             // Measure the dot decoration to start from the middle of the first text item and
             // end at the middle of the last text item
             val dotDecorationSize =
-                constraints.maxWidth - ((startTextWidth / 2) + (endTextWidth / 2)) + DotSize.roundToPx()
+                constraints.maxWidth - ((startTextWidth / 2) + (endTextWidth / 2)) + dotSize.roundToPx()
             val dotDecoration = measurables[1].measure(
                 constraints.copy(
                     minWidth = dotDecorationSize,
@@ -100,7 +100,7 @@ fun JobDescriptionPostDetail(
                 )
                 // place the dot decoration on top the divider
                 dotDecoration.placeRelative(
-                    x = (startTextWidth / 2) - (DotSize.roundToPx() / 2),
+                    x = (startTextWidth / 2) - (dotSize.roundToPx() / 2),
                     y = 0,
                 )
                 // place the text items below the divider with equal spacing in between
@@ -125,10 +125,8 @@ private fun TextItem(
 ) {
     Column(
         modifier = modifier
-            .padding(
-                horizontal = 16.dp,
-            )
-            .padding(top = 8.dp),
+            .padding(horizontal = paddingSecondary())
+            .padding(top = paddingSecondary() / 2),
         horizontalAlignment = Alignment.CenterHorizontally,
         content = {
             Text(
@@ -159,7 +157,7 @@ private fun DotDecoration(
                     color = MaterialTheme.colorScheme.primary,
                     shape = CircleShape,
                 )
-                .size(DotSize),
+                .size(paddingSecondary()),
         )
     }
     Box(

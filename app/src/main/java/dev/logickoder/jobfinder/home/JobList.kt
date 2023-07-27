@@ -39,6 +39,7 @@ import dev.logickoder.jobfinder.app.model.TestJobs
 import dev.logickoder.jobfinder.app.model.daysSincePosted
 import dev.logickoder.jobfinder.app.theme.JobFinderTheme
 import dev.logickoder.jobfinder.app.theme.padding
+import dev.logickoder.jobfinder.app.theme.paddingSecondary
 import dev.logickoder.jobfinder.app.theme.paddingSmall
 import dev.logickoder.jobfinder.app.widget.Rating
 import kotlinx.collections.immutable.ImmutableList
@@ -82,7 +83,7 @@ private fun JobItem(
                 color = MaterialTheme.colorScheme.primaryContainer,
                 shape = MaterialTheme.shapes.large,
             )
-            .padding(vertical = 16.dp, horizontal = paddingSmall()),
+            .padding(vertical = paddingSecondary(), horizontal = paddingSmall()),
         content = {
             Rating(
                 modifier = Modifier.align(Alignment.TopEnd),
