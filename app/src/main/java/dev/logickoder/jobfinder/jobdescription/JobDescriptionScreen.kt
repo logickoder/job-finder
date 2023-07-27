@@ -65,6 +65,12 @@ fun JobDescriptionScreen(
                                 fontWeight = FontWeight.W500,
                             )
                             JobDescriptionPostInfo(job = job)
+                            JobDescriptionPostDetail(
+                                modifier = Modifier
+                                    .fillMaxWidth()
+                                    .padding(vertical = padding()),
+                                job = job
+                            )
                         }
                     )
 

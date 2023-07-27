@@ -70,7 +70,7 @@ fun JobDescriptionPostInfo(
 
 @Preview(showBackground = true)
 @Composable
-fun JobDescriptionPostInfoPreview() = JobFinderTheme {
+private fun JobDescriptionPostInfoPreview() = JobFinderTheme {
     JobDescriptionPostInfo(
         job = TestJobs.first(),
     )
