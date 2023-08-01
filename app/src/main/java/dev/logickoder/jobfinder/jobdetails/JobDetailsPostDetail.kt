@@ -20,9 +20,11 @@ import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.layout.Layout
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import dev.logickoder.jobfinder.R
 import dev.logickoder.jobfinder.app.model.Job
 import dev.logickoder.jobfinder.app.model.TestJobs
 import dev.logickoder.jobfinder.app.theme.JobFinderTheme
@@ -52,19 +54,19 @@ fun JobDetailsPostDetail(
             )
             DotDecoration(modifier = Modifier.fillMaxWidth())
             TextItem(
-                text = "Salary",
+                text = stringResource(id = R.string.salary),
                 content = {
                     Text(salary)
                 }
             )
             TextItem(
-                text = "Type",
+                text = stringResource(id = R.string.type),
                 content = {
                     Text("Full Time")
                 }
             )
             TextItem(
-                text = "Ratings",
+                text = stringResource(id = R.string.ratings),
                 content = {
                     Rating(rating = job.rating)
                 }
