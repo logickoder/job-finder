@@ -7,12 +7,14 @@ import com.bumble.appyx.core.node.Node
 
 class HomeRoute(
     buildContext: BuildContext,
+    private val navigateToJobDescription: (String) -> Unit,
 ) : Node(buildContext) {
 
     @Composable
     override fun View(modifier: Modifier) {
         HomeScreen(
             modifier = modifier,
+            onApplyToJobClicked = navigateToJobDescription,
         )
     }
 }

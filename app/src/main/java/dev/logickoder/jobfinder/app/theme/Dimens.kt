@@ -12,3 +12,8 @@ fun padding() = dimensionResource(id = R.dimen.padding)
 @ReadOnlyComposable
 @Composable
 fun paddingSmall() = dimensionResource(id = R.dimen.padding_small)
+
+
+@ReadOnlyComposable
+@Composable
+fun paddingSecondary() = dimensionResource(id = R.dimen.padding_secondary)
