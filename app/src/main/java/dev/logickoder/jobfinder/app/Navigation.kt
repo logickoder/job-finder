@@ -12,6 +12,7 @@ import com.bumble.appyx.navmodel.backstack.operation.push
 import com.bumble.appyx.navmodel.backstack.transitionhandler.rememberBackstackSlider
 import dev.logickoder.jobfinder.home.HomeRoute
 import dev.logickoder.jobfinder.jobdetails.JobDetailsRoute
+import dev.logickoder.jobfinder.uploadresume.UploadResumeRoute
 import kotlinx.parcelize.Parcelize
 
 class Navigation(
@@ -47,6 +48,13 @@ class Navigation(
             is Route.JobDetails -> JobDetailsRoute(
                 buildContext = buildContext,
                 jobId = navTarget.jobId,
+                navigateToUploadResume = {
+                    backStack.push(Route.UploadResume)
+                }
+            )
+
+            is Route.UploadResume -> UploadResumeRoute(
+                buildContext = buildContext,
             )
         }
     }
@@ -58,5 +66,8 @@ class Navigation(
 
         @Parcelize
         data class JobDetails(val jobId: String) : Route
+
+        @Parcelize
+        data object UploadResume : Route
     }
 }

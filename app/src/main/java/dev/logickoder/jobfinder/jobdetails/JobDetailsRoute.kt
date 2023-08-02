@@ -10,6 +10,7 @@ import dev.logickoder.jobfinder.app.model.TestJobs
 class JobDetailsRoute(
     buildContext: BuildContext,
     private val jobId: String,
+    private val navigateToUploadResume: () -> Unit,
 ) : Node(buildContext) {
 
     @Composable
@@ -22,6 +23,7 @@ class JobDetailsRoute(
             job = job,
             modifier = modifier,
             onBack = ::navigateUp,
+            onApplyClicked = navigateToUploadResume,
         )
     }
 }

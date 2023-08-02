@@ -41,6 +41,7 @@ fun JobDetailsScreen(
     job: Job,
     modifier: Modifier = Modifier,
     onBack: () -> Unit,
+    onApplyClicked: () -> Unit,
 ) {
     Scaffold(
         modifier = modifier,
@@ -122,7 +123,7 @@ fun JobDetailsScreen(
                             }
                             .align(Alignment.BottomCenter)
                             .fillMaxWidth(),
-                        onClick = {},
+                        onClick = onApplyClicked,
                         content = {
                             Text(
                                 text = stringResource(R.string.apply_now),
@@ -143,5 +144,6 @@ private fun JobDetailsScreenPreview() = JobFinderTheme {
     JobDetailsScreen(
         job = TestJobs[0],
         onBack = {},
+        onApplyClicked = {},
     )
 }
