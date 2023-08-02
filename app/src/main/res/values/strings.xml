@@ -23,4 +23,6 @@
 
     <!-- Upload Resume -->
     <string name="upload_resume">Upload resume</string>
+    <string name="upload_resume_title">Upload your resume for more relevant jobs</string>
+    <string name="upload_resume_subtitle">You have not posted your resume yet, post now for more jobs</string>
 </resources>

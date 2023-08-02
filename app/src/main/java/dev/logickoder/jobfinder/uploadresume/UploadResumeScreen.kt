@@ -1,8 +1,10 @@
 package dev.logickoder.jobfinder.uploadresume
 
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Button
 import androidx.compose.material3.MaterialTheme
@@ -10,8 +12,11 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import dev.logickoder.jobfinder.R
 import dev.logickoder.jobfinder.app.theme.JobFinderTheme
@@ -39,7 +44,38 @@ fun UploadResumeScreen(
                     .padding(padding())
                     .padding(scaffoldPadding),
                 content = {
-                    Spacer(modifier = Modifier.weight(1f))
+                    Image(
+                        modifier = Modifier
+                            .weight(1.5f)
+                            .fillMaxWidth(),
+                        painter = painterResource(id = R.drawable.img_upload_resume),
+                        contentDescription = stringResource(id = R.string.upload_resume),
+                        contentScale = ContentScale.Crop,
+                    )
+                    Spacer(modifier = Modifier.height(padding()))
+                    Text(
+                        text = stringResource(id = R.string.upload_resume_title),
+                        style = MaterialTheme.typography.headlineSmall,
+                        fontWeight = FontWeight.W500,
+                        textAlign = TextAlign.Center,
+                        color = MaterialTheme.colorScheme.onSurfaceVariant,
+                    )
+                    Spacer(modifier = Modifier.height(paddingSecondary() / 2))
+                    Text(
+                        text = stringResource(id = R.string.upload_resume_subtitle),
+                        textAlign = TextAlign.Center,
+                    )
+                    Spacer(modifier = Modifier.height(padding()))
+                    UploadResumeFileDrop(
+                        modifier = Modifier
+                            .weight(1f)
+                            .fillMaxWidth()
+                    )
+                    UploadResumeActions(
+                        modifier = Modifier
+                            .padding(vertical = paddingSecondary())
+                            .fillMaxWidth(),
+                    )
                     Button(
                         modifier = Modifier.fillMaxWidth(),
                         onClick = { },
