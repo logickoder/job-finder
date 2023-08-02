@@ -11,9 +11,9 @@ class UploadResumeRoute(
 
     @Composable
     override fun View(modifier: Modifier) {
-
         UploadResumeScreen(
             modifier = modifier,
+            onBack = ::navigateUp,
         )
     }
 }

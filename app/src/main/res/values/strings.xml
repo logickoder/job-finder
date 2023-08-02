@@ -20,4 +20,7 @@
         <item quantity="one">%d day ago</item>
         <item quantity="other">%d days ago</item>
     </plurals>
+
+    <!-- Upload Resume -->
+    <string name="upload_resume">Upload resume</string>
 </resources>
