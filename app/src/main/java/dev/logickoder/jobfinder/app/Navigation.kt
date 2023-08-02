@@ -8,8 +8,11 @@ import com.bumble.appyx.core.modality.BuildContext
 import com.bumble.appyx.core.node.Node
 import com.bumble.appyx.core.node.ParentNode
 import com.bumble.appyx.navmodel.backstack.BackStack
+import com.bumble.appyx.navmodel.backstack.operation.push
 import com.bumble.appyx.navmodel.backstack.transitionhandler.rememberBackstackSlider
 import dev.logickoder.jobfinder.home.HomeRoute
+import dev.logickoder.jobfinder.jobdetails.JobDetailsRoute
+import dev.logickoder.jobfinder.uploadresume.UploadResumeRoute
 import kotlinx.parcelize.Parcelize
 
 class Navigation(
@@ -37,6 +40,21 @@ class Navigation(
         return when (navTarget) {
             Route.Home -> HomeRoute(
                 buildContext = buildContext,
+                navigateToJobDescription = {
+                    backStack.push(Route.JobDetails(it))
+                }
+            )
+
+            is Route.JobDetails -> JobDetailsRoute(
+                buildContext = buildContext,
+                jobId = navTarget.jobId,
+                navigateToUploadResume = {
+                    backStack.push(Route.UploadResume)
+                }
+            )
+
+            is Route.UploadResume -> UploadResumeRoute(
+                buildContext = buildContext,
             )
         }
     }
@@ -44,6 +62,12 @@ class Navigation(
     sealed interface Route : Parcelable {
 
         @Parcelize
-        object Home : Route
+        data object Home : Route
+
+        @Parcelize
+        data class JobDetails(val jobId: String) : Route
+
+        @Parcelize
+        data object UploadResume : Route
     }
 }

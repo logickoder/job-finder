@@ -3,6 +3,7 @@ package dev.logickoder.jobfinder.app.model
 import androidx.annotation.FloatRange
 import kotlinx.collections.immutable.toPersistentList
 import java.time.LocalDate
+import java.time.temporal.ChronoUnit
 import kotlin.random.Random
 
 data class Job(
@@ -15,6 +16,15 @@ data class Job(
     val imageUrl: String,
     val datePosted: LocalDate,
 )
+
+/**
+ * Returns the number of days since the job was posted.
+ */
+fun Job.daysSincePosted(): Int = ChronoUnit.DAYS.between(
+    datePosted,
+    LocalDate.now()
+).toInt()
+
 
 val TestJobs = run {
     val images = mapOf(

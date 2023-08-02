@@ -23,6 +23,7 @@ import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.vector.ImageVector
@@ -35,13 +36,13 @@ import coil.compose.AsyncImage
 import dev.logickoder.jobfinder.R
 import dev.logickoder.jobfinder.app.model.Job
 import dev.logickoder.jobfinder.app.model.TestJobs
+import dev.logickoder.jobfinder.app.model.daysSincePosted
 import dev.logickoder.jobfinder.app.theme.JobFinderTheme
 import dev.logickoder.jobfinder.app.theme.padding
+import dev.logickoder.jobfinder.app.theme.paddingSecondary
 import dev.logickoder.jobfinder.app.theme.paddingSmall
 import dev.logickoder.jobfinder.app.widget.Rating
 import kotlinx.collections.immutable.ImmutableList
-import java.time.LocalDate
-import java.time.temporal.ChronoUnit
 
 @Composable
 fun JobList(
@@ -51,6 +52,7 @@ fun JobList(
         start = padding(),
         end = padding(),
     ),
+    onApplyToJobClicked: (String) -> Unit,
 ) {
     LazyRow(
         modifier = modifier,
@@ -61,7 +63,8 @@ fun JobList(
                     job = jobs[index],
                     modifier = Modifier.padding(
                         start = if (index != 0) paddingSmall() else 0.dp,
-                    )
+                    ),
+                    onApplyClicked = onApplyToJobClicked,
                 )
             }
         },
@@ -71,7 +74,8 @@ fun JobList(
 @Composable
 private fun JobItem(
     job: Job,
-    modifier: Modifier = Modifier
+    modifier: Modifier = Modifier,
+    onApplyClicked: (String) -> Unit,
 ) {
     Box(
         modifier = modifier
@@ -79,7 +83,7 @@ private fun JobItem(
                 color = MaterialTheme.colorScheme.primaryContainer,
                 shape = MaterialTheme.shapes.large,
             )
-            .padding(vertical = 16.dp, horizontal = paddingSmall()),
+            .padding(vertical = paddingSecondary(), horizontal = paddingSmall()),
         content = {
             Rating(
                 modifier = Modifier.align(Alignment.TopEnd),
@@ -108,10 +112,7 @@ private fun JobItem(
                     Row(
                         horizontalArrangement = Arrangement.spacedBy(4.dp),
                         content = {
-                            val days = ChronoUnit.DAYS.between(
-                                job.datePosted,
-                                LocalDate.now()
-                            ).toInt()
+                            val days = remember(job) { job.daysSincePosted() }
                             JobInfoItem(
                                 icon = Icons.Outlined.Timelapse,
                                 text = pluralStringResource(
@@ -133,7 +134,9 @@ private fun JobItem(
                         content = {
                             Button(
                                 modifier = Modifier.weight(1f),
-                                onClick = {},
+                                onClick = {
+                                    onApplyClicked(job.id)
+                                },
                                 content = {
                                     Text(
                                         text = stringResource(R.string.apply_now),
@@ -189,12 +192,12 @@ private fun JobInfoItem(
 @Preview(showBackground = true)
 @Composable
 private fun JobItemPreview() = JobFinderTheme {
-    JobItem(job = TestJobs[0])
+    JobItem(job = TestJobs[0]) {}
 }
 
 @Preview(showBackground = true)
 @Composable
 private fun JobListPreview() = JobFinderTheme {
-    JobList(jobs = TestJobs)
+    JobList(jobs = TestJobs) {}
 }
 

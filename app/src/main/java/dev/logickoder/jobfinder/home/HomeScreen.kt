@@ -19,17 +19,18 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
-import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import dev.logickoder.jobfinder.R
 import dev.logickoder.jobfinder.app.model.TestJobs
 import dev.logickoder.jobfinder.app.theme.JobFinderTheme
 import dev.logickoder.jobfinder.app.theme.padding
+import dev.logickoder.jobfinder.app.theme.paddingSecondary
 import dev.logickoder.jobfinder.app.theme.paddingSmall
 
 @Composable
 fun HomeScreen(
     modifier: Modifier = Modifier,
+    onApplyToJobClicked: (String) -> Unit,
 ) {
     var selectedIndex by remember { mutableIntStateOf(0) }
 
@@ -37,7 +38,7 @@ fun HomeScreen(
         modifier = modifier,
         topBar = {
             HomeTopBar(
-                modifier = Modifier.padding(horizontal = padding() - 16.dp),
+                modifier = Modifier.padding(horizontal = padding() - paddingSecondary()),
             )
         },
         content = { scaffoldPadding ->
@@ -82,7 +83,10 @@ fun HomeScreen(
                             )
                         }
                     )
-                    JobList(jobs = TestJobs)
+                    JobList(
+                        jobs = TestJobs,
+                        onApplyToJobClicked = onApplyToJobClicked
+                    )
                 }
             )
         },
@@ -100,5 +104,5 @@ fun HomeScreen(
 @Preview(showBackground = true)
 @Composable
 private fun HomeScreenPreview() = JobFinderTheme {
-    HomeScreen()
+    HomeScreen {}
 }
